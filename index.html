@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!--link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css"-->
+    <link rel="stylesheet" href="http://localhost:8080/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="http://localhost:8080/node_modules/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="http://localhost:8080/theme.css">
+    <script src="http://localhost:8080/node_modules/jquery/dist/jquery.js"></script>
+    <script src="http://localhost:8080/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+  </head>
+  <body>
+      <div class="page-header">
+        <h1>Lesson 1</h1>
+      </div>
+      <p>
+        <button type="button" id="btn_n1" class="btn btn-lg btn-default">__</button> * 
+        <button type="button" id="btn_n2" class="btn btn-lg btn-default">__</button> = 
+        <button type="button" id="btn_n3" class="btn btn-lg btn-success">__</button> 
+      </p>
+        <script>
+
+            const timer = ms => new Promise(res => setTimeout(res, ms))
+
+            btn_n1 = document.getElementById("btn_n1")
+
+            btn_n2 = document.getElementById("btn_n2")
+
+            btn_n3 = document.getElementById("btn_n3")
+
+            async function update() {
+
+                    while(true) {
+
+                        i_10 = Math.floor(Math.random() * 9) + 1                
+
+                        i_1 = Math.floor(Math.random() * 9) + 1
+
+                        n1 = 10*i_10 + i_1
+
+                        n2 = 10*i_10 + (10 - i_1)
+
+                        btn_n1.textContent = n1
+
+                        btn_n2.textContent = n2
+
+                        btn_n3.textContent = "__"
+
+                        console.log(n1, n2)
+
+                        await timer(10000)
+
+                        btn_n3.textContent = n1 * n2
+
+                        await timer(2000)
+
+                    }
+
+            }
+
+            update()
+
+        </script>
+
+  </body>
+
+</html>
